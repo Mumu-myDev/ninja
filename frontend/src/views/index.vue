@@ -13,6 +13,18 @@
         <el-button type="danger" size="small" auto @click="delAccount">删除CK</el-button>
       </div>
     </div>
+          <div class="card-body text-base leading-6">
+        <p>为了您的财产安全请关闭免密支付以及打开支付验密（京东-设置-支付设置-支付验密设置）。 我关后台的，登录后不用担心ck在我这里泄露 </p>
+        <p>建议京东账户绑定微信以保证提现能到账。</p>
+        <p>由于京东异地登录限制（相当于你在我服务器登录了），扫码获取cookie只有2小时有效期，因此建议，手动抓取Cookie。</p>
+        <p>且有效期不长，平均3-5天，因此需要及时更新。</p>
+        <b>安全起见，WSCK可以在CK登录后录入，（类似于在我手机上登录了JD）期限一年的样子吧，当然改密码全部失效。 </b>
+        <b>我会开后台的端口白名单的，只有我的ip，登录后不用担心ck在我这里泄露，当然脚本多了，不确保其他人盗取。 </b>
+        <b>------------------------------自己注意--------------------------------------<b>
+        <b>为了您的财产安全请关闭免密支付以及打开支付验密（京东-设置-支付设置-支付验密设置）。<b>
+        <b>为了您的财产安全请关闭免密支付以及打开支付验密（京东-设置-支付设置-支付验密设置）。<b>
+        <b>为了您的财产安全请关闭免密支付以及打开支付验密（京东-设置-支付设置-支付验密设置）。<b>
+      </div>
     
     <div class="card">
       <div class="card-header">
@@ -28,6 +40,7 @@
               <p class="card-subtitle">cookie失效后，也会在系统设定的指定时间内自动转换出新的cookie，实现一次录入长期有效</p>
               <b>wskey会随着京东app的退出登录和更改密码而失效，清楚app数据或者卸载软件不会影响。</b>
             </div>
+
       </div>
       <div class="card-body text-center">
         <el-input v-model="jdwsck" placeholder="pin=xxxxxx;wskey=xxxxxxxxxx;" size="small" clearable class="my-4 w-full" />
