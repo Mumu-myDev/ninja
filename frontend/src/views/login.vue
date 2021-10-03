@@ -7,11 +7,16 @@
         </div>
       </div>
       <div class="card-body text-base leading-6">
-        <p>为了您的财产安全请关闭免密支付以及打开支付验密（京东-设置-支付设置-支付验密设置）。</p>
+        <p>为了您的财产安全请关闭免密支付以及打开支付验密（京东-设置-支付设置-支付验密设置）。 我关后台的，登录后不用担心ck在我这里泄露 </p>
         <p>建议京东账户绑定微信以保证提现能到账。</p>
-        <p>由于京东异地登录限制，扫码获取cookie只有2小时有效期，因此暂时关闭扫码功能，现需手动抓取Cookie。</p>
+        <p>由于京东异地登录限制（相当于你在我服务器登录了），扫码获取cookie只有2小时有效期，因此建议，手动抓取Cookie。</p>
         <p>且有效期不长，平均3-5天，因此需要及时更新。</p>
-        <b>安全起见，WSCK可以在CK登录后录入，期限半永久。</b>
+        <b>安全起见，WSCK可以在CK登录后录入，（类似于在我手机上登录了JD）期限一年的样子吧，当然改密码全部失效。 </b>
+        <b>我会开后台的端口白名单的，只有我的ip，登录后不用担心ck在我这里泄露，当然脚本多了，不确保其他人盗取。 </b>
+        <b>------------------------------自己注意--------------------------------------<b>
+        <b>为了您的财产安全请关闭免密支付以及打开支付验密（京东-设置-支付设置-支付验密设置）。<b>
+        <b>为了您的财产安全请关闭免密支付以及打开支付验密（京东-设置-支付设置-支付验密设置）。<b>
+        <b>为了您的财产安全请关闭免密支付以及打开支付验密（京东-设置-支付设置-支付验密设置）。<b>
       </div>
       <div class="card-footet"></div>
     </div>
@@ -40,34 +45,10 @@
       <div class="card-footer"></div>
     </div>
 
-    <div v-if="showWSCK" class="card">
-      <div class="card-header">
-        <div class="flex items-center justify-between">
-          <p class="card-title">WSCK 录入</p>
-          <span class="ml-2 px-2 py-1 bg-gray-200 rounded-full font-normal text-xs">余量：{{ marginWSCKCount }}</span>
-        </div>
-        <div class="card-body text-base leading-6">
-          <b>wskey有效期长达一年，请联系管理员确认使用（删不掉，慎用）</b>
-          <p>用户须手动提取pin和wskey，格式如："pt_pin=xxxxxx;wskey=xxxxxxxxxx;"。</p>
-          <p class="card-subtitle">——IOS用户手机抓包APP&emsp;<a style="" href="https://apps.apple.com/cn/app/stream/id1312141691" target="_blank" id="downiOSApp">点击跳转安装</a> </p>
-          <p class="card-subtitle">——在api.m.jd.com域名下找POST请求大概率能找到wskey。</p>
-          <p class="card-subtitle">wskey在录入后立马上线，系统会在指定时间检查wskey，有效则自动转换出cookie登录</p>
-          <p class="card-subtitle">cookie失效后，也会在系统设定的指定时间内自动转换出新的cookie，实现一次录入长期有效</p>
-          <b>wskey会随着京东app的退出登录和更改密码而失效，清楚app数据或者卸载软件不会影响。</b>
-        </div>
-        <span class="card-subtitle"> 请在下方输入您的 WSCK  </span>
-      </div>
-      <div class="card-body text-center">
-        <el-input v-model="jdwsck" placeholder="pin=xxxxxx;wskey=xxxxxxxxxx;" size="small" clearable class="my-4 w-full" />
-        <el-button type="primary" size="small" round @click="WSCKLogin">录入</el-button>
-      </div>
-      <div class="card-footet"></div>
-    </div>
-
     <div v-if="showCK" class="card">
       <div class="card-header">
         <div class="flex items-center justify-between">
-          <p class="card-title">CK 登录</p>
+          <p class="card-title">COOK 登录</p>
           <span class="ml-2 px-2 py-1 bg-gray-200 rounded-full font-normal text-xs">余量：{{ marginCount }}</span>
         </div>
         <div class="card-body text-base leading-6">
@@ -84,6 +65,32 @@
       </div>
       <div class="card-footet"></div>
     </div>
+
+    <div v-if="showWSCK" class="card">
+      <div class="card-header">
+        <div class="flex items-center justify-between">
+          <p class="card-title">WSCK 录入</p>
+          <span class="ml-2 px-2 py-1 bg-gray-200 rounded-full font-normal text-xs">余量：{{ marginWSCKCount }}</span>
+        </div>
+        <div class="card-body text-base leading-6">
+          
+          <p>用户须手动提取pin和wskey，格式如："pt_pin=xxxxxx;wskey=xxxxxxxxxx;"。</p>
+          <p class="card-subtitle">——IOS用户手机抓包APP&emsp;<a style="" href="https://apps.apple.com/cn/app/stream/id1312141691" target="_blank" id="downiOSApp">点击跳转安装</a> </p>
+          <p class="card-subtitle">——在api.m.jd.com域名下找POST请求大概率能找到wskey。 实在不会联系我吧 反正国企没回去</p>
+          <p class="card-subtitle">wskey在录入后立马上线，系统会在指定时间检查wskey，有效则自动转换出cookie登录</p>
+          <p class="card-subtitle">cookie失效后，也会在系统设定的指定时间内自动转换出新的cookie，实现一次录入长期有效</p>
+          <b>wskey会随着京东app的退出登录和更改密码而失效，清楚app数据或者卸载软件不会影响。（要退出改密码就行了）</b>
+        </div>
+        <span class="card-subtitle"> 请在下方输入您的 WSCK  </span>
+      </div>
+      <div class="card-body text-center">
+        <el-input v-model="jdwsck" placeholder="pin=xxxxxx;wskey=xxxxxxxxxx;" size="small" clearable class="my-4 w-full" />
+        <el-button type="primary" size="small" round @click="WSCKLogin">录入</el-button>
+      </div>
+      <div class="card-footet"></div>
+    </div>
+
+    
   </div>
 </template>
 
