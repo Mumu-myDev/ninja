@@ -145,8 +145,8 @@ export default {
     }
 
     const getQrcode = async () => {
-      // 增加扫码是否禁用判断
-      if (this.showQR) {
+      
+      
         try {
           const body = await getQrcodeAPI()
           data.token = body.data.token
@@ -163,9 +163,7 @@ export default {
           console.error(e)
           ElMessage.error('生成二维码失败！请重试或放弃')
         }
-      } else {
-        ElMessage.warning('扫码已禁用请手动抓包')
-      }
+
 
     }
 
@@ -174,6 +172,7 @@ export default {
     }
 
     const jumpLogin = async () => {
+      const href = `openapp.jdmobile://virtual/ad?params={"category":"jump","des":"ThirdPartyLogin","action":"to","onekeylogin":"return","url":"https://plogin.m.jd.com/cgi-bin/m/tmauth?appid=300&client_type=m&token=${data.token}","authlogin_returnurl":"weixin://","browserlogin_fromurl":"${window.location.host}"}`
       const href = `openapp.jdmobile://virtual/ad?params={"category":"jump","des":"ThirdPartyLogin","action":"to","onekeylogin":"return","url":"https://plogin.m.jd.com/cgi-bin/m/tmauth?appid=300&client_type=m&token=${data.token}","authlogin_returnurl":"weixin://","browserlogin_fromurl":"${window.location.host}"}`
       window.location.href = href
     }
